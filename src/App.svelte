@@ -81,7 +81,7 @@
 
   <div>
     {#if results.length > 0}
-      <h3>Possible Words:</h3>
+      <h3>Possible Words ({results.length}):</h3>
       <ul>
         {#each results as result}
           <li>{result}</li>
