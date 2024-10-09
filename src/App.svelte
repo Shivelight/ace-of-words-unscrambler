@@ -7,7 +7,7 @@
   async function loadDictionary() {
     let d = {};
     try {
-      const response = await fetch("/US_4_final.txt");
+      const response = await fetch("US_4_final.txt");
       const text = await response.text();
       const dicList = text.split("\n");
       dicList
