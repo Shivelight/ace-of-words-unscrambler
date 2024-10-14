@@ -71,13 +71,15 @@
 </script>
 
 <div>
-  <input
-    type="text"
-    bind:value={scrambledWord}
-    placeholder="Enter scrambled word (ENGLISH ONLY)"
-  />
-  <hr>
-  <button on:click={findMatches}>Find Words</button>
+  <form on:submit|preventDefault={findMatches}>
+    <input
+      type="text"
+      bind:value={scrambledWord}
+      placeholder="Enter scrambled word (ENGLISH ONLY)"
+    />
+    <hr />
+    <button>Find Words</button>
+  </form>
 
   <div>
     {#if results.length > 0}
