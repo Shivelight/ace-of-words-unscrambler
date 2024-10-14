@@ -3,6 +3,7 @@
   let dictionary = {};
   let scrambledWord = "";
   let results = [];
+  let longestToShortest = false;
 
   async function loadDictionary() {
     let d = {};
@@ -11,6 +12,7 @@
       const text = await response.text();
       const dicList = text.split("\n");
       dicList
+        .map((word) => word.trim())
         .filter((word) => word !== "")
         .forEach((word) => {
           let intVal = wordToInt(word);
@@ -73,20 +75,26 @@
 <div>
   <form on:submit|preventDefault={findMatches}>
     <input
+    class="input-text"
       type="text"
       bind:value={scrambledWord}
       placeholder="Enter scrambled word (ENGLISH ONLY)"
     />
     <hr />
     <button>Find Words</button>
+    <div class="checkbox">
+      <label for="longest">
+        <input id="longest" type="checkbox" bind:checked={longestToShortest} /> Longest to shortest
+      </label>
+    </div>
   </form>
 
   <div>
     {#if results.length > 0}
       <h3>Possible Words ({results.length}):</h3>
       <ul>
-        {#each results as result}
-          <li>{result}</li>
+        {#each (longestToShortest ? [...results].reverse() : results) as result}
+          <li class:seven={result.length == 7} class:eight={result.length == 8}>{result}</li>
         {/each}
       </ul>
     {/if}
@@ -106,7 +114,7 @@
     -moz-columns: 2;
   }
 
-  input {
+  .input-text {
     padding: 8px;
     border-radius: 8px;
     border-style: solid;
@@ -124,4 +132,17 @@
     height: 1em;
     vertical-align: middle;
   }
+
+ .checkbox {
+    display: inline-block;
+  }
+
+  .eight {
+    color: orchid;
+  }
+
+  .seven {
+    color: orange;
+  }
+
 </style>
