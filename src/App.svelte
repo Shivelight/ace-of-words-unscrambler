@@ -102,8 +102,9 @@
 </div>
 
 <div class="container">
-  <a href="https://github.com/Shivelight/ace-of-words-unscrambler" target="_blank">Source Code</a>
+  <a href="https://store.steampowered.com/app/398680/Ace_Of_Words/" target="_blank">Ace of Words</a>
   <a href="https://steamcommunity.com/groups/achievementscouts" target="_blank"><img src="ascout.jpg" alt="Achivement Scouts logo"> Achievement Scouts</a>
+  <a href="https://github.com/Shivelight/ace-of-words-unscrambler" target="_blank">Source Code</a>
 </div>
 
 <style>
