@@ -93,6 +93,11 @@
   </div>
 </div>
 
+<div class="container">
+  <a href="https://github.com/Shivelight/ace-of-words-unscrambler" target="_blank">Source Code</a>
+  <a href="https://steamcommunity.com/groups/achievementscouts" target="_blank"><img src="ascout.jpg" alt="Achivement Scouts logo"> Achievement Scouts</a>
+</div>
+
 <style>
   ul {
     text-align: left;
@@ -106,5 +111,17 @@
     border-radius: 8px;
     border-style: solid;
     width: 90%;
+  }
+
+  .container {
+    font-family: monospace;
+    display: flex;
+    justify-content: space-around;
+    margin: 12px;
+  }
+
+  .container img {
+    height: 1em;
+    vertical-align: middle;
   }
 </style>
